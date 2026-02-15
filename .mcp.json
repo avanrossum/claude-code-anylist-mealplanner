@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "anylist": {
+      "command": "npx",
+      "args": ["mcp-anylist"]
+    }
+  }
+}

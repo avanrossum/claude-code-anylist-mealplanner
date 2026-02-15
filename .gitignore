@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Note: The docs/ folder contains personal preferences.
+# If publishing this repo as a template, you may want to:
+# 1. Keep the template files with placeholder content
+# 2. Or gitignore the docs/ folder and provide examples separately

@@ -1,0 +1,91 @@
+# AnyList Meal Planner
+
+AI-assisted meal planning using Claude Code and AnyList.
+
+## What is This?
+
+This project provides a structured environment for using Claude Code to plan weekly meals, manage recipes, and coordinate shopping lists through the AnyList app.
+
+Claude reads your preferences, dietary restrictions, and budget constraints from the docs in this folder, then uses MCP tools to interact with your AnyList account.
+
+## Requirements
+
+### 1. AnyList Account
+
+You need an [AnyList](https://www.anylist.com/) account (the meal planning features require AnyList Complete subscription).
+
+### 2. mcp-anylist
+
+Install and configure the AnyList MCP server:
+
+```bash
+# Install and authenticate (one-time setup)
+npx mcp-anylist --setup
+```
+
+This will prompt for your AnyList credentials and store them securely.
+
+### 3. Claude Code
+
+Install [Claude Code](https://claude.ai/code) if you haven't already.
+
+## Setup
+
+1. **Clone or copy this project** to your local machine
+
+2. **Configure your preferences** by editing the files in `docs/`:
+   - `dietary-restrictions.md` - Allergies, medical diets, etc.
+   - `family-preferences.md` - Likes, dislikes, comfort foods
+   - `budget.md` - Weekly spending limits
+   - `shopping-preferences.md` - Store preferences, ingredient strategies
+
+3. **Run Claude Code** from this directory:
+   ```bash
+   cd claude-code-anylist-mealplanner
+   claude
+   ```
+
+4. **Start planning!** Try:
+   - "Plan dinners for next week"
+   - "What meals do I have planned?"
+   - "Add ingredients for Tuesday's dinner to my shopping list"
+
+## Project Structure
+
+```
+claude-code-anylist-mealplanner/
+├── .mcp.json                    # MCP server configuration
+├── CLAUDE.md                    # Instructions for Claude
+├── README.md                    # This file
+└── docs/
+    ├── dietary-restrictions.md  # Health/medical diet needs
+    ├── family-preferences.md    # Food preferences
+    ├── budget.md                # Spending constraints
+    ├── shopping-preferences.md  # Shopping strategies
+    ├── decisions.md             # Planning history
+    └── recipe-cache.md          # Frequently used recipes
+```
+
+## How It Works
+
+1. **Claude reads your context** from the docs folder
+2. **You request a meal plan** ("Plan next week's dinners")
+3. **Claude proposes options** based on your constraints
+4. **You approve the plan**
+5. **Claude writes to AnyList** via MCP tools
+6. **Decisions are logged** for future reference
+
+## Tips
+
+- **Start simple** - Plan a few days before doing a full week
+- **Update preferences** - Add notes when you discover new likes/dislikes
+- **Review decisions** - Check `docs/decisions.md` periodically
+- **Be specific** - "Quick weeknight meals under 30 minutes" gets better results
+
+## Privacy
+
+Your AnyList credentials are stored locally in `~/.mcp-anylist-credentials` (encrypted). The docs in this folder contain your personal preferences — don't commit them to a public repo.
+
+## License
+
+MIT
