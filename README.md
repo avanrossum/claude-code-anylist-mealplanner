@@ -14,16 +14,39 @@ Claude reads your preferences, dietary restrictions, and budget constraints from
 
 You need an [AnyList](https://www.anylist.com/) account (the meal planning features require AnyList Complete subscription).
 
-### 2. mcp-anylist
+### 2. mcp-anylist (AnyList MCP Server)
 
-Install and configure the AnyList MCP server:
+This project requires the `mcp-anylist` MCP server to communicate with AnyList.
 
+**Option A: Install from npm** (when published)
 ```bash
-# Install and authenticate (one-time setup)
 npx mcp-anylist --setup
 ```
 
-This will prompt for your AnyList credentials and store them securely.
+**Option B: Install from GitHub** (current)
+```bash
+# Clone the MCP server repo
+git clone https://github.com/avanrossum/mcp-anylist.git
+cd mcp-anylist
+npm install
+
+# Run setup to authenticate with AnyList
+node src/index.js --setup
+```
+
+The setup will prompt for your AnyList email and password, then store your credentials securely in `~/.mcp-anylist-credentials`.
+
+> **Note:** If you installed from GitHub, update `.mcp.json` in this project to point to your local installation:
+> ```json
+> {
+>   "mcpServers": {
+>     "anylist": {
+>       "command": "node",
+>       "args": ["/path/to/mcp-anylist/src/index.js"]
+>     }
+>   }
+> }
+> ```
 
 ### 3. Claude Code
 
