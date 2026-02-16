@@ -50,7 +50,7 @@ The setup will prompt for your AnyList email and password, then store your crede
 
 ### 3. Claude Code
 
-Install [Claude Code](https://claude.ai/code) if you haven't already.
+Install Claude Code: [CLI](https://docs.anthropic.com/en/docs/claude-code) or [Desktop App](https://claude.ai/download).
 
 ## Setup
 
@@ -62,7 +62,14 @@ Install [Claude Code](https://claude.ai/code) if you haven't already.
    - `budget.md` - Weekly spending limits
    - `shopping-preferences.md` - Store preferences, ingredient strategies
 
-3. **Run Claude Code** from this directory:
+3. **Run Claude Code** in this project:
+
+   **Desktop App (Recommended):**
+   - Open Claude Code Desktop
+   - Click "Open Project" or drag this folder into the window
+   - The MCP server will connect automatically
+
+   **CLI:**
    ```bash
    cd claude-code-anylist-mealplanner
    claude
